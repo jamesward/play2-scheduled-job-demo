@@ -1,4 +1,6 @@
-Simple Play 2 App with a Scheduled Job
-======================================
+Simple Play 2 App with a Job
+============================
+
+This little app shows how you can do simple one-off and scheduled jobs within Play 2 apps on Heroku.  These jobs run in separate processes from the Play 2 web server.
 
 

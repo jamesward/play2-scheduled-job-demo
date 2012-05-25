@@ -36,3 +36,4 @@ Open the Scheduler add-on console:
 
     heroku addons:open scheduler
 
+Add a new scheduled task with `scheduledtick` as the command / task name.  Set the desired frequency.  Save the scheduled task and either wait for it to run or manually run it from the Scheduler add-on console.

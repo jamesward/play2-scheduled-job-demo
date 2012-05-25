@@ -9,8 +9,8 @@
 <body>
     <h2>Ticks (Page refreshes every 30 seconds)</h2>
     <ul>
-    @for(tick <- ticks) {
-        <li>Tick: @tick.message @tick.date</li>
+    @for(tick <- ticks.reverse) {
+        <li>Tick: @tick.message @tick.createDate</li>
     }
     </ul>
 </body>

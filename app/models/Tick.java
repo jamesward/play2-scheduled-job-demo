@@ -13,7 +13,7 @@ public class Tick extends Model {
     @Id
     public Long id;
     
-    public Date date;
+    public Date createDate;
     
     public String message;
 
@@ -22,7 +22,7 @@ public class Tick extends Model {
     }
 
     public Tick(String message) {
-        this.date = new Date();
+        this.createDate = new Date();
         this.message = message;
     }
 }

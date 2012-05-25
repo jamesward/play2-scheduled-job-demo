@@ -12,7 +12,7 @@ public class TickJob {
     
     public static void main(String[] args) {
 
-        Application application = new Application(new File(args[0]), TickJob.class.getClassLoader(), null, Mode.Dev());
+        Application application = new Application(new File(args[0]), TickJob.class.getClassLoader(), null, Mode.Prod());
 
         Play.start(application);
 

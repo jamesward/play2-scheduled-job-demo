@@ -1,0 +1,12 @@
+/logs
+/project/project
+/project/target
+/target
+/tmp
+/.history
+/dist
+/.idea
+/*.iml
+/conf/evolutions
+/out
+

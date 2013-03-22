@@ -1,6 +1,7 @@
 package jobs;
 
 import models.Tick;
+import play.api.DefaultApplication;
 import play.api.Play;
 import play.api.Mode;
 import play.api.Application;
@@ -12,7 +13,7 @@ public class TickJob {
     
     public static void main(String[] args) {
 
-        Application application = new Application(new File(args[0]), TickJob.class.getClassLoader(), null, Mode.Prod());
+        Application application = new DefaultApplication(new File(args[0]), TickJob.class.getClassLoader(), null, Mode.Prod());
 
         Play.start(application);
 

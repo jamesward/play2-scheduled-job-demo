@@ -24,7 +24,7 @@ Verify that it works:
 
     heroku open
 
-Run a one-off TickJob:
+Run a one-off `TickJob`:
 
     heroku run scheduledtick
 

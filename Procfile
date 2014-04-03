@@ -1,2 +1,2 @@
-web: target/start -Dhttp.port=$PORT -DapplyEvolutions.default=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=$DATABASE_URL
-scheduledtick: java -Dconfig.file=conf/application.conf -DapplyEvolutions.default=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=$DATABASE_URL -cp "target/staged/*" jobs.TickJob .
+web: target/universal/stage/bin/play2-scheduled-job-demo -Dprocess.type=web -Dhttp.port=$PORT -DapplyEvolutions.default=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=$DATABASE_URL
+scheduledtick: java -Dconfig.file=conf/application.conf -Dprocess.type=scheduledtick -DapplyEvolutions.default=true -Ddb.default.driver=org.postgresql.Driver -Ddb.default.url=$DATABASE_URL -cp "target/universal/stage/lib/*" jobs.TickJob .

@@ -19,6 +19,8 @@ public class TickJob {
 
         Tick tick = new Tick("Hello from the TickJob");
         tick.save();
+        
+        Play.stop();
     }
 
 }

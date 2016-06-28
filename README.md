@@ -1,39 +1,27 @@
 Simple Play 2 App with a Job
 ============================
 
-This little app shows how you can do simple one-off and scheduled jobs within Play 2 apps on Heroku.  These jobs run in separate processes from the Play 2 web server.
+This example shows how to run a scheduled job in a Play app either in the web process or outside the web process (e.g. an external scheduler like [Heroku's Scheduler Addon](https://elements.heroku.com/addons/scheduler).
+
+## Running Locally
+
+By default, when running the web app locally the Tick runs every second:
+
+    ./sbt ~run
+
+> You should see "tick tock" every second in the STDOUT logs.
+
+To run just a single Tick as a standalone process, run:
+
+    ./sbt runMain jobs.TickJob
+
+> You should only see a single "tick tock" and then the process exits.
 
 
 ## Running on Heroku
 
-Clone this project locally:
-
-    $ git clone git://github.com/jamesward/play2-scheduled-job-demo
-
-In the `play2-scheduled-job-demo` directory, create a new app on Heroku (make sure you have the [Heroku Toolbelt](http://tool
-belt.heroku.com) installed):
-
-    $ heroku login
-    $ heroku create -s cedar
-
-Push the app to Heroku:
-
-    git push heroku master
-
-Verify that it works:
-
-    heroku open
-
-Run a one-off `TickJob`:
-
-    heroku run scheduledtick
-
-Add the Scheduler add-on:
-
-    heroku addons:add scheduler:standard
-
-Open the Scheduler add-on console:
-
-    heroku addons:open scheduler
-
-Add a new scheduled task with `scheduledtick` as the command / task name.  Set the desired frequency.  Save the scheduled task and either wait for it to run or manually run it from the Scheduler add-on console.
+1. [![Deploy on Heroku](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy)
+1. Open the *Resources* tab in your app's dashboard: `https://dashboard.heroku.com/apps/YOUR APP NAME/resources`
+1. Click on the *Heroku Scheduler* Add-on
+1. Add a new scheduled task with `tick` as the command / task name
+1. Check your app's logs to see the scheduled tick: `https://dashboard.heroku.com/apps/YOUR APP NAME/logs`

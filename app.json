@@ -1,0 +1,10 @@
+{
+  "name": "play2-scheduled-job-demo",
+  "env": {
+    "APPLICATION_SECRET": {
+      "description": "A secret key for verifying the integrity of signed cookies.",
+      "generator": "secret"
+    }
+  },
+  "addons": ["scheduler:standard"]
+}
